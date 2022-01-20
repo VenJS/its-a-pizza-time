@@ -1,4 +1,5 @@
 import EventEmitter from "eventemitter3";
+import Notification from "./Notification";
 
 export default class Application extends EventEmitter {
   static get events() {
@@ -23,6 +24,7 @@ export default class Application extends EventEmitter {
       pizza.setAttribute('type', pizzaObject[i].type);
       pizza.setAttribute('price', pizzaObject[i].price);
       pizza.innerHTML = 'pizza' + i;
+      pizza.onclick = function() {return this.notification}
       
       document.body.appendChild(pizza);
     }
